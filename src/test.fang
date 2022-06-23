@@ -1,0 +1,17 @@
+<script>
+    const title='app'
+    const color='blue'
+    const className='box'
+</script>
+<div class='${className}'>
+    ${title}
+</div>
+<section>hi</section>
+<style>
+    .${className}{
+        background:${color};
+    }
+    *{
+        color:#666
+    }
+</style>
