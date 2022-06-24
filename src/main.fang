@@ -1,14 +1,39 @@
 <script>
     const title='app'
-    const color='red'
     const className='box'
+    let color='red'
+    let count = 0
+    const onClick=()=>{
+        count++
+        update()
+    }
+    
+    expose({onClick});
+    expose({
+        onRed(){
+            color='red'
+            update()
+        },
+        onGreen(){
+            color='green'
+            update()
+        }
+    })
 </script>
-<div class='${className}'>
-    ${title}
+<div class='${className}' @click.capture="onClick">
+    <div>
+        ${title}
+        ${count}
+    </div>
 </div>
-<section>hi</section>
+<div @click="onRed">变红</div>
+<div @click="onGreen">变绿</div>
 <style>
     .${className}{
         background:${color};
+    }
+    *{
+        font-size:60px;
+        user-select:none;
     }
 </style>
