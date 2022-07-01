@@ -1,22 +1,18 @@
 <script>
-    const title='app'
+    const title='app'  
     const className='box'
-    let color='red'
-    let count = 0
+    const [color,setColor]=useState('red')
+    const [count,setCount] = useState(0)
     const onClick=()=>{
-        count++
-        update()
+        setCount(count+1)
     }
-    
     expose({onClick});
     expose({
         onRed(){
-            color='red'
-            update()
+            setColor('red')
         },
         onGreen(){
-            color='green'
-            update()
+            setColor('green')
         }
     })
 </script>

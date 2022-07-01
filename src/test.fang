@@ -2,8 +2,14 @@
     const title='app'
     const color='blue'
     const className='box'
+    const [count,setCount] = useState(0)
+    const onClick=()=>{
+        setCount(count+1)
+    }
+    expose({onClick});
 </script>
-<div class='${className}'>
+<div class='${className}' @click="onClick" style="user-select:none;">
+   <span style="font-size:24px;color:white;">${count}</span> 
     ${title}
 </div>
 <section>hi</section>
