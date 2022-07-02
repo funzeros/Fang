@@ -1,5 +1,5 @@
 <script>
-    const title='app'  
+    const title='点击+1'  
     const className='box'
     const [color,setColor]=useState('red')
     const [count,setCount] = useState(0)
@@ -13,15 +13,25 @@
         },
         onGreen(){
             setColor('green')
+        },
+        onAlert(){
+            alert("1")
+        },
+        onSub(){
+        setCount(count-1)
+
         }
     })
 </script>
-<div class='${className}' @click.capture="onClick">
+<div class='${className}' @click="onClick">
     <div>
-        ${title}
+        ${title}/
         ${count}
+        <div @click.stop="onSub">减1</div>
     </div>
 </div>
+123
+${`123`}
 <div @click="onRed">变红</div>
 <div @click="onGreen">变绿</div>
 <style>
